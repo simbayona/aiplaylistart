@@ -1,0 +1,12 @@
+Client ID 8a887ef73d1e431bbc970a22bf144533
+Client Secret 09d745fd8ba7464ba8f9b2dbc0ad5524
+Redirect uri 
+
+8a887ef73d1e431bbc970a22bf144533:09d745fd8ba7464ba8f9b2dbc0ad5524
+
+https://accounts.spotify.com/authorize?client_id=8a887ef73d1e431bbc970a22bf144533&scopes=playlist-read-private&response_type=code&redirect_uri=https%3A%2F%2Fwww.simbayona.com
+
+
+curl -H "Authorization: Basic OGE4ODdlZjczZDFlNDMxYmJjOTcwYTIyYmYxNDQ1MzM6MDlkNzQ1ZmQ4YmE3NDY0YmE4ZjliMmRiYzBhZDU1MjQ=" -d grant_type=authorization_code -d code=AQDOsaSM_IISTnG-yg3JsEjo0YwO9kMTRMjZx4F89-s4W3d4SO2-OjUXJo5L3VAi__B9FxqEsaVUcmc5mIt3eCujFKWkQ8J9soxZMkjzIXPpTQO-zpld4uVrT0YgLn-x4s5FcPpGnLTi4l6UhXNjNfzmV-irZU1mmzgW3cg -d redirect_uri=https%3A%2F%2Fwww.simbayona.com https://accounts.spotify.com/api/token
+
+
