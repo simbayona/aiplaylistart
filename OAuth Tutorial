@@ -1,0 +1,44 @@
+ # Before you start you will need three things from your Spotify Dashboard
+
+CLIENT ID = 8a887ef73d1e431bbc970a22bf144533
+CLIENT SECRET = 09d745fd8ba7464ba8f9b2dbc0ad5524
+REDIRECT URI = https://www.simbyona.com
+
+ # Cobine your Cliend ID and Client Secret like so
+
+ ID&SECRET 8a887ef73d1e431bbc970a22bf144533:09d745fd8ba7464ba8f9b2dbc0ad5524
+
+ # URL Encode your REDIRECT URI and Base64 Encode your ID&SECRET
+ 
+REDIRECT URI = https%3A%2F%2Fwww.simbayona.com
+ID&SECRET = OGE4ODdlZjczZDFlNDMxYmJjOTcwYTIyYmYxNDQ1MzM6MDlkNzQ1ZmQ4YmE3NDY0YmE4ZjliMmRiYzBhZDU1MjQ=
+
+ # Paste your normal CLIENT ID and your encoded REDIRECT URI into this 
+ 
+https://accounts.spotify.com/authorize?client_id="YOUR CLIENT ID"&scopes=playlist-read-private&response_type=code&redirect_uri="YOUR REDIRECT URI"
+
+ # You should have something like this:
+
+https://accounts.spotify.com/authorize?client_id=8a887ef73d1e431bbc970a22bf144533&scopes=playlist-read-private&response_type=code&redirect_uri=https%3A%2F%2Fwww.simbayona.com
+
+ # Paste the new link into any web browser and look at the url. Everything that appears after ?code= is your CODE
+ 
+CODE = AQBsZ5dyDdfCFURAG_DO3KlYKypWWBGw7Yx6IrgKZiT-ues1sHB27mP9zrygCQvcIpN-kgt9UmMyTA-15RftBdWTmm7idFccbVTlPxrcM9tOvx7PqiVgz4Pc6NXL6P7oa6uqusm0sNb_7DQ3cTNCOj3vu6UDtVImtZpDD3U
+
+ # These codes will expire after some time
+ # Paste the CODE you just got and the encoded ID&SECRET and REDIRECT URI into this
+
+curl -H "Authorization: "YOUR ID&SECRET" -d grant_type=authorization_code -d code="YOUR CODE" -d redirect_uri="YOUR REDIRECT URI" https://accounts.spotify.com/api/token
+
+ # You should end up with something like this:
+
+curl -H "Authorization: Basic OGE4ODdlZjczZDFlNDMxYmJjOTcwYTIyYmYxNDQ1MzM6MDlkNzQ1ZmQ4YmE3NDY0YmE4ZjliMmRiYzBhZDU1MjQ=" -d grant_type=authorization_code -d code=AQBsZ5dyDdfCFURAG_DO3KlYKypWWBGw7Yx6IrgKZiT-ues1sHB27mP9zrygCQvcIpN-kgt9UmMyTA-15RftBdWTmm7idFccbVTlPxrcM9tOvx7PqiVgz4Pc6NXL6P7oa6uqusm0sNb_7DQ3cTNCOj3vu6UDtVImtZpDD3U -d redirect_uri=https%3A%2F%2Fwww.simbayona.com https://accounts.spotify.com/api/token
+
+
+ # Paste all of that into your command terminal it should return something like this:
+ 
+{"access_token":"BQCTNoGpHm9Ee3GoMeNUtjBv_cgPoaDrXqMsqInK6dW30BVTiBNezh9PoXkvaQBF_vJ_juGJlc2QQXaxYyhn0IH6WMzJ2OVLtP7aeeUX-vacaCRZvLQzdzbzriHoaXUFMksMqFRYpglKFvV3bVo","token_type":"Bearer","expires_in":3600,"refresh_token":"AQC8bYf9P4GVFu6oJ4oaGE60maVD4NVq9AYEVhkuoCIE9aIGM04jtKHOesYa1_NSFvDH0Wz0Bknph2CqqCotDCdxuppAgajrYSzXnGxDXV0GnHtDK-m-kRqnnjtP9dUTx6Y"}
+
+ # Copy the "access_token" and then paste it as the "token" variable in your code
+
+ACCESS TOKEN = BQCTNoGpHm9Ee3GoMeNUtjBv_cgPoaDrXqMsqInK6dW30BVTiBNezh9PoXkvaQBF_vJ_juGJlc2QQXaxYyhn0IH6WMzJ2OVLtP7aeeUX-vacaCRZvLQzdzbzriHoaXUFMksMqFRYpglKFvV3bVo
